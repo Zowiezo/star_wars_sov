@@ -1,6 +1,6 @@
-import { omit, pick } from 'ramda'
+import { omit } from 'ramda'
 import 'reflect-metadata'
-import { createConnection } from 'typeorm'
+import { Connection, createConnection } from 'typeorm'
 import { Person } from '../src/entity'
 const fixtures = require('.')
 let {
@@ -12,17 +12,17 @@ const relations = [
   'homeworld',
 ]
 
-function loaddata(entity, data, omits, connection) {
+function loaddata(entity: typeof Person, data: any[], omits: readonly string[], connection: Connection) {
   return connection
     .createQueryBuilder()
     .insert()
     .into(entity)
-    .values(data.map(d => ({ ...omit(omits, d.fields), id: d.pk })))
+    .values(data.map((d: { fields: any; pk: any }) => ({ ...omit(omits, d.fields), id: d.pk })))
     .execute()
 }
-function loadRelation(entity, attribute, data, connection) {
+function loadRelation(entity: typeof Person, attribute: string, data: { map: (arg0: (d: any) => any) => readonly [unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown] }, connection: Connection) {
   return Promise.all(
-    data.map(d => {
+    data.map((d: { fields: { [x: string]: any }; pk: any }) => {
       if (d.fields[attribute] instanceof Array) {
         return connection
           .createQueryBuilder()

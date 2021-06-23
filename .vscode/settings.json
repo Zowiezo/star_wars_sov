@@ -1,17 +1,22 @@
 {
     "cSpell.words": [
         "Kubheka",
+        "appheader",
         "dataloader",
+        "datasource",
         "groupby",
         "homeworld",
         "nowrap",
         "nprogress",
+        "opensans",
         "prefetch",
         "prismjs",
         "starjedi",
         "starjhol",
         "starships",
         "swapi",
-        "typeorm"
+        "truetype",
+        "typeorm",
+        "vmin"
     ]
 }

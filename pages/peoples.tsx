@@ -80,7 +80,7 @@ const People = () => {
           {page !== 1 && (
             <IconButton
               aria-label='delete'
-              size='large'
+              font-size='large'
               onClick={() => setPage(page - 1)}
             >
               <NavigateBefore fontSize='inherit' color='primary' />
@@ -90,7 +90,7 @@ const People = () => {
           {page !== 9 && (
             <IconButton
               aria-label='delete'
-              size='large'
+              font-size='large'
               onClick={() => setPage(page + 1)}
             >
               <NavigateNext fontSize='inherit' color='primary' />
