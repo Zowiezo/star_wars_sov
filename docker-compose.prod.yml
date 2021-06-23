@@ -1,0 +1,34 @@
+version: '3'
+services:
+  postgres:
+    image: 'postgres:latest'
+    env_file: .env
+    restart: always
+    volumes:
+      - ./db_prod:/var/lib/postgresql/data
+
+  front:
+    build:
+      context: './client-next'
+      dockerfile: Dockerfile.prod
+      args:
+        - API_URL=https://swapiql.xyz/api/
+    restart: always
+    ports:
+      - '4001:3000'
+    command: 'yarn start'
+
+  back:
+    depends_on:
+      - postgres
+    restart: always
+    build:
+      context: './server'
+      args:
+        - POSTGRES_USER
+        - POSTGRES_DB
+        - POSTGRES_PASSWORD
+    env_file: .env
+    ports:
+      - '4000:4000'
+    command: 'yarn prod'

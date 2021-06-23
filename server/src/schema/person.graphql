@@ -1,0 +1,19 @@
+
+type Person{
+    id: ID!
+    birth_year: String!
+    eye_color: String!
+    films: [Film!]
+    gender: String!
+    hair_color: String!
+    height: Float!
+    homeworld: Planet
+    mass: String!
+    name: String!
+    skin_color: String!
+    created: DateTime!
+    edited: DateTime!
+    specie: Specie
+    starships: [Starship!]
+    vehicles: [Vehicle!]
+}

@@ -1,0 +1,42 @@
+version: '3'
+services:
+  postgres:
+    image: 'postgres:latest'
+    volumes:
+      - db_dev:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    env_file: .local.env
+
+  front:
+    build:
+      context: './client-next'
+      dockerfile: 'Dockerfile'
+      args:
+        - API_URL=http://localhost:4000/
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./client-next:/app:delegated
+      - /app/node_modules
+    command: 'yarn dev'
+
+  back:
+    depends_on:
+      - postgres
+    build:
+      context: './server'
+      args:
+        - POSTGRES_USER
+        - POSTGRES_PASSWORD
+        - POSTGRES_DB
+    env_file: .local.env
+    ports:
+      - '4000:4000'
+    command: 'yarn start'
+    volumes:
+      - ./server:/app:delegated
+      - /app/node_modules
+
+volumes:
+  ? db_dev

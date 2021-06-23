@@ -1,0 +1,17 @@
+type Specie{
+    id: ID!
+    average_height: String!
+    average_lifespan: String!
+    classification: String!
+    created: DateTime!
+    designation: String!
+    edited: DateTime!
+    eye_colors: String!
+    hair_colors: String!
+    homeworld: Planet
+    language: String!
+    name: String!
+    people: [Person!]
+    films: [Film!]
+    skin_colors: String!
+}
