@@ -4,9 +4,14 @@
         "dataloader",
         "groupby",
         "homeworld",
+        "nowrap",
         "nprogress",
         "prefetch",
+        "prismjs",
+        "starjedi",
+        "starjhol",
         "starships",
+        "swapi",
         "typeorm"
     ]
 }

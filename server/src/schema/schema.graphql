@@ -1,26 +1,9 @@
 # import Person from 'person.graphql'
-# import Film from 'film.graphql'
-# import Planet from 'planet.graphql'
-# import Specie from 'specie.graphql'
-# import Starship from 'starship.graphql'
-# import Vehicle from 'vehicle.graphql'
+
 scalar DateTime
 
 type Query{
   person(id: ID!): Person
   people(limit: Int): [Person!]!
-  film(id: ID!): Film
-  films(limit: Int): [Film!]!
-  starship(id: ID!): Starship
-  starships(limit: Int): [Starship!]!
-  vehicle(id: ID!): Vehicle
-  vehicles(limit: Int): [Vehicle!]!
-  specie(id: ID): Specie
-  species(limit: Int): [Specie!]!
-  planet(id: ID!): Planet
-  planets(limit: Int): [Planet!]!
 }
 
-type Subscription {
-  newFilms: Film!
-}

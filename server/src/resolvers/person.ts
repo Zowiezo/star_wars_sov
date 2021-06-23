@@ -2,8 +2,8 @@ import { getRepository } from 'typeorm'
 import { Person } from '../entity'
 
 export const queries = {
-  person: async (_, { id }) => getRepository(Person).findByIds(id),
-  people: async (_, { limit }) => {
+  person: async (_: any, { id }: any) => getRepository(Person).findByIds(id),
+  people: async (_: any, { limit }: any) => {
     const opts: any = {}
     if (limit) {
       opts.take = limit
@@ -13,16 +13,16 @@ export const queries = {
 }
 
 export const fields = {
-  homeworld: (person, params, { loaders }) => {
+  homeworld: (person: { homeworldId: any }, _params: any, { loaders }: any) => {
     if (!person.homeworldId) {
       return null
     }
     return loaders.planetLoader.load(person.homeworldId)
   },
-  specie: (person, params, { loaders }) => (person.specieId ? loaders.specieLoader.load(person.specieId) : null),
-  films: (person, params, { loaders }) => loaders.filmLoaderByCharacterIds.load(person.id),
-  starships: (person, params, { loaders }) => loaders.starshipLoaderByPersonIds.load(person.id),
-  vehicles: (person, params, { loaders }) => loaders.vehicleLoaderByPersonIds.load(person.id),
+  specie: (person: { specieId: any }, _params: any, { loaders }: any) => (person.specieId ? loaders.specieLoader.load(person.specieId) : null),
+  films: (person: { id: any }, _params: any, { loaders }: any) => loaders.filmLoaderByCharacterIds.load(person.id),
+  starships: (person: { id: any }, _params: any, { loaders }: any) => loaders.starshipLoaderByPersonIds.load(person.id),
+  vehicles: (person: { id: any }, _params: any, { loaders }: any) => loaders.vehicleLoaderByPersonIds.load(person.id),
 }
 
 

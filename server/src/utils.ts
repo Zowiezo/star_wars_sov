@@ -3,7 +3,7 @@ export class DefaultDict {
   constructor() {
     this.map = new Map()
   }
-  public add(to, id) {
+  public add(to: number, id: any) {
     let current = this.map.get(to)
     if (!current) {
       current = []
@@ -12,15 +12,15 @@ export class DefaultDict {
     this.map.set(to, current)
   }
 
-  public get(id) {
+  public get(id: number) {
     return this.map.get(id)
   }
 
-  public toString() {
-    for (const key of this.map.keys()) {
-      for (const value of this.map.get(key)) {
-        console.log(key, value)
-      }
-    }
+  // public toString() {
+  //   for (const key of this.map.keys()) {
+  //     for (const value of this.map.get(key)) {
+  //       console.log(key, value)
+  //     }
+  //   }
   }
-}
+

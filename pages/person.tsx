@@ -1,9 +1,9 @@
 import gql from 'graphql-tag'
 
-import withData from '../client/src/lib/withData'
-import QueryPage from '../client/src/components/QueryPage'
-import DetailPage from '../client/src/components/DetailPage/DetailPage'
-import Query from '../client/src/components/Query'
+import withData from '../pages/client/src/lib/withData'
+import QueryPage from '../pages/client/src/components/QueryPage'
+import DetailPage from '../pages/client/src/components/DetailPage/DetailPage'
+import Query from '../pages/client/src/components/Query'
 
 const query = `query person($id: ID!) {
   person(id: $id) {
@@ -19,6 +19,7 @@ const query = `query person($id: ID!) {
   }
 }
 `
+
 const personDetailQuery = gql(query)
 
 const PersonDetail = ({ person }) => (

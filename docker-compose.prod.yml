@@ -9,10 +9,10 @@ services:
 
   front:
     build:
-      context: './client-next'
+      context: './pages'
       dockerfile: Dockerfile.prod
       args:
-        - API_URL=https://swapiql.xyz/api/
+        - API_URL=
     restart: always
     ports:
       - '4001:3000'
