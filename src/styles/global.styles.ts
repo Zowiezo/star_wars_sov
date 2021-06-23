@@ -11,24 +11,24 @@ export default css.global`
 
   @font-face {
     font-family: 'starjedi';
-    src: url('../../../../pages/client/public/Starjedi.ttf');
+    src: url('../../pages/public/Starjedi.ttf');
   }
 
   @font-face {
     font-family: 'Open Sans';
-    src: url('../../../../pages/client/public/opensans/OpenSans-Regular.ttf') format('truetype');
+    src: url('../../pages/public/opensans/OpenSans-Regular.ttf') format('truetype');
   }
 
   @font-face {
     font-family: 'Open Sans';
     font-weight: 300;
-    src: url('../../../../pages/client/public/opensans/OpenSans-Light.ttf') format('truetype');
+    src: url('../../pages/client/public/opensans/OpenSans-Light.ttf') format('truetype');
   }
 
   @font-face {
     font-family: 'Open Sans';
     font-weight:500;
-    src: url('../../../../pages/client/public/opensans/OpenSans-Bold.ttf') format('truetype');
+    src: url('../../pages/client/public/opensans/OpenSans-Bold.ttf') format('truetype');
   }
 
   html,

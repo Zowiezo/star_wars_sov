@@ -1,9 +1,6 @@
 import Link from 'next/link'
 import SearchBox from '../Search/SearchBox';
 
-
-
-
 const Header = () => <header className="flex flex-column flex-row-l justify-between items-center">
   <div>
   <Link prefetch href="/">
