@@ -3,9 +3,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import profilePic from '../pages/client/public/yoda.png';
-import Layout from '../pages/client/src/components/Layout'
-import Button from '../pages/client/src/components/Button'
-import QueryPage from './client/src/components/QueryPage';
+import Layout from '../src/components/Layout'
+import Button from '../src/components/Button'
+import QueryPage from '../src/components/QueryPage';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 import { ApolloProvider as ApolloHooksProvider } from '@apollo/react-hooks'

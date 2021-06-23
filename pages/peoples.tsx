@@ -8,7 +8,7 @@ import {
   Paper
 } from '@material-ui/core';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import globalStyles from '../pages/client/src/styles/global.styles';
+import globalStyles from '../src/styles/global.styles';
 
 
 //import './index.css';
