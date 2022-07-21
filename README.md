@@ -15,4 +15,4 @@
 ## Import data
 `docker-compose -f docker-compose.prod.yml exec back yarn run import`
 
- Made with <3 by [Zoleka Kubheka](https://github.com/zowiezo) :D star_wars_sov
+ Made with <3 by [Zoleka Kubheka](https://github.com/zowiezo) :D star_wars
